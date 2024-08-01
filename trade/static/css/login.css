@@ -1,0 +1,120 @@
+* {
+    font-family: Roboto, sans-serif;
+}
+
+#registrar1 {
+    text-align: center;
+    font-size: 72px;
+    margin-top: 200px;
+    color: white;
+    text-shadow: black 3px 2px;
+}
+
+#registrar2 {
+    color: #00C2E9;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 15px;
+}
+
+#registrar2:hover {
+    color: #023E8A;
+}
+
+.formulario {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.formulario .form-group {
+    margin-bottom: 20px;
+}
+
+.formulario label {
+    font-size: 24px;
+    display: block; /* Faz o label ocupar toda a largura e ficar acima do input */
+    color: white;
+    text-shadow: black 2px 2px;
+}
+
+.formulario input[type=text],
+.formulario input[type=password] {
+    font-size: 24px;
+    padding: 8px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+#registro {
+    color: white;
+    font-size: 24px;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    background-color: #48CAE4;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
+    border: 2px solid black;
+}
+
+#registro:hover {
+    background-color: #0077B6;
+}
+
+#sublinhado {
+    color: #ffde59;
+    text-decoration: none;
+}
+
+#sublinhado:hover {
+    color: yellow;
+}
+
+#botao {
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    display: block;
+    margin-top: 20px;
+    background-color: #004aad;
+    color: white;
+    border: 1px solid black;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: center;
+    width: calc(100% - 80px);
+    max-width: 320px;
+    align-self: center;
+    box-shadow: black 1px 1px 3px 0px;
+    font-weight: bold;
+    margin-left: 11.5%;
+}
+
+#botao:hover {
+    color: black;
+    background-color: #ffde59;
+    a {
+        color: black;
+    }
+}
+
+#botao a {
+    text-decoration: none;
+    color: white;
+}
+
+.fundo {
+    background-image: url('trade/static/css/images/fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 80%;
+}

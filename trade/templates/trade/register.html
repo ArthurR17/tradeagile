@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">
+</head>
+<body>
+
+<!-- Imagem de fundo -->
+    <img class="fundo" src="{% static '/css/images/fundo.jpg' %}" alt="Fundo">
+
+    <!-- Título da página -->
+    <div id="registrar1">Registre-se</div>
+    <!-- Link para a página de login -->
+    <div id="registrar2">
+        <a id="sublinhado" href="{% url 'login' %}">Já tem uma conta? Faça login</a>
+    </div>
+
+    <!-- Formulário de registro -->
+    <form class="formulario" method="post">
+        {% csrf_token %}
+
+        <!-- Campo de nome de usuário -->
+        <div class="form-group">
+            <label for="id_username">Nome de usuário:</label><br>
+            {{ form.username }}
+        </div>
+
+        <!-- Campo de e-mail -->
+        <div class="form-group">
+            <label for="id_email">E-mail:</label><br>
+            {{ form.email }}
+        </div>
+
+        <!-- Campo de senha -->
+        <div class="form-group">
+            <label for="id_password1">Senha:</label><br>
+            {{ form.password1 }}
+        </div>
+
+        <!-- Campo de confirmação de senha -->
+        <div class="form-group">
+            <label for="id_password2">Confirmação de senha:</label><br>
+            {{ form.password2 }}
+        </div>
+
+        <!-- Botão de submissão -->
+        <button id="botao" type="submit"><span>Registrar</span></button>
+    </form>
+
+</body>
+</html>

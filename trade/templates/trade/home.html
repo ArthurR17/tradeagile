@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Trade.Agile - Home</title>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+    <!-- Imagem de fundo -->
+    <img class="fundo" src="{% static '/css/images/fundo.jpg' %}" alt="Fundo">
+
+    <!-- Cabeçalho da página -->
+    <header>
+        <div class="container">
+            <!-- Mensagem de boas-vindas com o nome do usuário -->
+            <h1>Bem-vindo à Trade.Agile, {{ user.username }}!</h1>
+        </div>
+    </header>
+
+    <!-- Seção de botões -->
+    <div class="botoes">
+        <!-- Logo da Trade.Agile -->
+        <img id="logo" src="{% static '/css/images/trade.agile.png' %}" alt="Imagem da logo"><br>
+
+        <!-- Botões de navegação para diferentes páginas -->
+        <button><a href="{% url 'cadastro_clientes' %}">Cadastro de Clientes</a></button><br>
+        <button><a href="{% url 'demonstrativo_tabelas' %}">Demonstrativo das Tabelas</a></button><br>
+        <button><a href="{% url 'galeria_produtos' %}">Galeria de Produtos</a></button><br>
+        <button><a href="{% url 'realizar_venda' %}">Realizar Venda</a></button><br>
+        <!-- Botão de logout -->
+        <button id="logout"><a href="{% url 'logout' %}" class="">Logout</a></button>
+    </div>
+</body>
+</html>

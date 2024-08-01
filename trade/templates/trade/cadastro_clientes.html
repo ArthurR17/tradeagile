@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Carrega o módulo de arquivos estáticos do Django -->
+    {% load static %}
+
+    <!-- Define o título da página que aparece na aba do navegador -->
+    <title>Cadastro de Clientes</title>
+
+    <!-- Inclui o arquivo de estilo CSS específico para esta página -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastrocli.css' %}">
+</head>
+
+<body>
+    <!-- Seção do cabeçalho da página -->
+    <header>
+        <div class="container">
+            <!-- Título principal da página -->
+            <h1>Cadastro de Clientes</h1>
+        </div>
+    </header>
+
+    <!-- Formulário de cadastro -->
+    <form method="post">
+        <!-- Inclusão do token CSRF para proteção contra ataques Cross-Site Request Forgery -->
+        {% csrf_token %}
+
+        <!-- Renderiza o formulário como parágrafos HTML -->
+        {{ form.as_p }}
+
+        <!-- Botão de envio do formulário -->
+        <button class="btn-submit" type="submit">Cadastrar</button>
+    </form>
+
+    <!-- Botão para voltar à página inicial -->
+    <button class="link-back" onclick="window.location.href='{% url 'home' %}'">Voltar para Home</button>
+</body>
+
+</html>

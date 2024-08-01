@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <!-- Define o conjunto de caracteres para a página -->
+    <meta charset="UTF-8">
+    <!-- Define a viewport para responsividade em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Galeria de Produtos</title>
+    <!-- Link para o arquivo CSS externo para estilização -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/galeria.css' %}">
+</head>
+<body>
+    <!-- Cabeçalho da página -->
+    <header>
+        <div class="container">
+            <!-- Título principal da página -->
+            <h1>Galeria de Produtos</h1>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        <div class="container">
+            <!-- Lista de produtos com classe de estilo 'galeria' -->
+            <ul class="galeria">
+                <!-- Loop para exibir todos os produtos -->
+                {% for produto in produtos %}
+                <li class="produto">
+                    <!-- Div para a imagem do produto -->
+                    <div class="produto-imagem">
+                        <!-- Verifica se o produto tem uma imagem -->
+                        {% if produto.imagem %}
+                            <!-- Exibe a imagem do produto se disponível -->
+                            <img src="{% static produto.imagem %}" alt="Imagem do Produto">
+                        {% else %}
+                            <!-- Exibe uma imagem padrão se a imagem do produto não estiver disponível -->
+                            <img src="{% static 'css/images/trade.agile.png' %}" alt="Imagem Padrão">
+                        {% endif %}
+                    </div>
+                    <!-- Div para as informações do produto -->
+                    <div class="produto-info">
+                        <!-- Descrição do produto -->
+                        <h2>{{ produto.descprod }}</h2>
+                        <!-- Código do produto -->
+                        <p><strong>Código:</strong> {{ produto.codiprod }}</p>
+                        <!-- Valor do produto formatado em reais -->
+                        <p><strong>Valor:</strong> R$ {{ produto.valorprod }}</p>
+                        <!-- Situação do produto (ex: disponível, fora de estoque) -->
+                        <p><strong>Situação:</strong> {{ produto.situprod }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+    <!-- Botão para voltar para a página inicial -->
+    <button class="botao"><a href="{% url 'home' %}">Voltar para a página inicial</a></button>
+</body>
+</html>

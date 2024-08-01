@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Demonstrativo das Tabelas</title>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tabelas.css' %}">
+</head>
+<body>
+<header>
+    <div class="container">
+        <!-- Título da página -->
+        <h1>Demonstrativo das Tabelas</h1>
+    </div>
+</header>
+
+<!-- Container para as tabelas -->
+<div class="tabela-container">
+    <!-- Seção de Clientes -->
+    <section class="tabela-section">
+        <h2>Clientes</h2>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Código</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop para exibir os clientes -->
+                {% for cliente in clientes %}
+                <tr>
+                    <td>{{ cliente.nomecli }}</td>
+                    <td>{{ cliente.codcli }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Seção de Fornecedores -->
+    <section class="tabela-section">
+        <h2>Fornecedores</h2>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Código</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop para exibir os fornecedores -->
+                {% for fornecedor in fornecedores %}
+                <tr>
+                    <td>{{ fornecedor.nomeforn }}</td>
+                    <td>{{ fornecedor.codiforn }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Seção de Produtos -->
+    <section class="tabela-section">
+        <h2>Produtos</h2>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Código</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop para exibir os produtos -->
+                {% for produto in produtos %}
+                <tr>
+                    <td>{{ produto.descprod }}</td>
+                    <td id="cod1">{{ produto.codiprod }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Seção de Vendas -->
+    <section class="tabela-section">
+        <h2>Vendas</h2>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop para exibir as vendas -->
+                {% for venda in vendas %}
+                <tr>
+                    <td>{{ venda.codivend }}</td>
+                    <td>R$ {{ venda.valorvend }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+
+<!-- Botão para voltar para a página inicial -->
+<button class="link-back">
+    <a href="{% url 'home' %}">Voltar para a página inicial</a>
+</button>
+</body>
+</html>

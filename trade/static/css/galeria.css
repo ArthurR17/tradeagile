@@ -1,0 +1,121 @@
+/* Reset de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #9eb9cc;
+    line-height: 1.6;
+    min-height: 1100px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #0077B6;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: black 0px 0px 5px 1px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+main {
+    margin-top: 20px;
+}
+
+ul.galeria {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.produto {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: black 0px 0px 3px 1px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+}
+
+.produto .produto-imagem {
+    height: 200px;
+    overflow: hidden;
+}
+
+.produto .produto-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.produto:hover .produto .produto-imagem img {
+    transform: scale(1.1);
+}
+
+.produto .produto-info {
+    padding: 20px;
+}
+
+.produto .produto-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.produto .produto-info p {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+
+.botao {
+    font-family: Roboto, sans-serif;
+    font-size: 20px;
+    display: block;
+    margin-top: 20px;
+    background-color: #004aad;
+    color: white;
+    border: 1px solid black;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: center;
+    width: calc(100% - 80px);
+    max-width: 320px;
+    align-self: center;
+    box-shadow: black 1px 1px 3px 0px;
+    font-weight: bold;
+    margin-left: 41.5%;
+}
+
+.botao:hover {
+    color: black;
+    background-color: #ffde59;
+    a {
+        color: black;
+    }
+}
+
+.botao a {
+    text-decoration: none;
+    color: white;
+}
+
+

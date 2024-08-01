@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <!-- Imagem de fundo -->
+    <img class="fundo" src="{% static '/css/images/fundo.jpg' %}" alt="Fundo">
+
+    <!-- Título de Login -->
+    <div id="registrar1">Login</div>
+    <!-- Link para a página de registro -->
+    <div id="registrar2">
+        <a id="sublinhado" href="{% url 'register' %}">Não possui uma conta? Registre-se</a>
+    </div>
+
+    <!-- Formulário de Login -->
+    <form class="formulario" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <!-- Botão de submissão -->
+        <button id="botao" type="submit"><span>Entrar</span></button>
+    </form>
+
+</body>
+</html>
